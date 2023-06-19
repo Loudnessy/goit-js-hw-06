@@ -13,7 +13,5 @@ const images = [
   },
 ];
 const ul = document.querySelector(".gallery")
-for (const image of images) {
-  ul.insertAdjacentHTML("afterbegin", `<li><img src="${image.url}" alt="${image.alt}" width="200" height="200"></li>`)
-
-}
+const htmlString = images.map(image => `<li><img src="${image.url}" alt="${image.alt}" width="200" height="200"></li>`).join('');
+ul.insertAdjacentHTML('afterbegin', htmlString);
